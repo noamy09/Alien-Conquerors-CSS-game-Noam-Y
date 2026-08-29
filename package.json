@@ -1,0 +1,24 @@
+{
+  "name": "alien-conquerors-css-game-noam-y",
+  "version": "1.0.0",
+  "description": "a game meant to help learn CSS",
+  "homepage": "https://github.com/noamy09/Alien-Conquerors-CSS-game-Noam-Y#readme",
+  "bugs": {
+    "url": "https://github.com/noamy09/Alien-Conquerors-CSS-game-Noam-Y/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noamy09/Alien-Conquerors-CSS-game-Noam-Y.git"
+  },
+  "license": "ISC",
+  "author": "Noam y.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

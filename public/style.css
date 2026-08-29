@@ -18,7 +18,7 @@ body {
 .game {
   display: flex;
   gap: 20px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .game-title {
@@ -74,14 +74,18 @@ body {
 }
 
 .CSS-hyperdrive {
+  position: relative;
   container-type: inline-size;
-  border: 2px solid #00FF00;
-  padding: clamp(8px, 4cqi, 20px);
+  --fs: clamp(9px, 3.8cqi, 22px);
+  --line: 2.2em;
+  font-size: var(--fs);
+  border: 2px dashed  #00FF00;
+  padding: 1.4em;
   background-color: #001100;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(4px, 2cqi, 10px);
+  gap: 0.7em;
   align-items: flex-start;
   flex: 1 1 0;
   min-width: 0;
@@ -90,60 +94,71 @@ body {
 .rows {
   display: flex;
   flex-direction: column;
-  gap: clamp(3px, 1.5cqi, 8px);
-  font-size: clamp(7px, 3cqi, 16px);
+  font-size: var(--fs);
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 0 3px #00FF00;
 }
 
 .rows p {
   margin: 0;
+  height: var(--line);
+  line-height: var(--line);
 }
 
 .CSS-structucre {
   display: flex;
   flex-direction: column;
-  gap: clamp(3px, 1.5cqi, 8px);
+  font-size: var(--fs);
   flex: 1 1 0;
   min-width: 0;
 }
 
 .CSS-bfore{
-    font-size: clamp(6px, 2.6cqi, 14px);
+    font-size: var(--fs);
     margin: 0;
     padding: 0;
+    height: var(--line);
+    line-height: var(--line);
 }
 
 .CSS-indent {
-  font-size: clamp(6px, 2.6cqi, 14px);
+  font-size: var(--fs);
   margin: 0;
   padding: 0;
-  padding-left: clamp(6px, 4cqi, 25px);
+  padding-left: 1.8em;
+  height: var(--line);
+  line-height: var(--line);
 }
 
 .CSS-after {
-  font-size: clamp(6px, 2.6cqi, 14px);
+  font-size: var(--fs);
   margin: 0;
-  padding: 0; 
+  padding: 0;
+  height: var(--line);
+  line-height: var(--line);
 }
 
 #userInputForm {
   display: flex;
   width: 100%;
   flex-basis: 100%;
-  padding-left: clamp(6px, 4cqi, 25px);
+  font-size: var(--fs);
+  padding-left: 1.8em;
+  height: var(--line);
 }
 
 #userInput {
   flex: 1;
   min-width: 0;
+  height: var(--line);
   background-color: #00ff0009;
   border: 2px solid #00ff0009;
   color: #00FF00;
-  padding: 3px;
+  padding: 0 0.3em;
   font-family: 'Courier New', monospace;
-  font-size: clamp(6px, 2.6cqi, 14px);
+  font-size: var(--fs);
+  line-height: var(--line);
   outline: none;
   
 }
@@ -159,17 +174,18 @@ body {
   background-color: #000000;
   border: 2px solid #00FF00;
   color: #00FF00;
-  padding: clamp(4px, 2cqi, 10px) clamp(6px, 4cqi, 20px);
+  padding: 0.7em 1.4em;
   cursor: pointer;
   font-family: 'Courier New', monospace;
-  font-size: clamp(6px, 2.6cqi, 14px);
+  font-size: var(--fs);
   font-weight: bold;
   text-transform: uppercase;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
   text-shadow: 0 0 5px #00FF00;
-  margin-left: auto;
-  align-self: flex-end;
+  position: absolute;
+  right: 1.4em;
+  bottom: 1.4em;
 }
 
 #feedbackBubble {
@@ -191,25 +207,24 @@ body {
   display: flex;
   justify-content: center;
   flex: 1 1 0;
-  min-width: 0;
-}
+  min-width: 0;}
 
 #board {
   width: 100%;
   max-width: 800px;
+  display: flex;
 }
 
 .solar-system {
-  border: 2px solid #00FF00;
+  border: 2px dashed #00FF00;
   background-color: #001100;
   padding: 20px;
-  min-height: 400px;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  align-items: flex-start;
+  align-content: flex-start;
   flex: 1;
 }
 
@@ -228,18 +243,13 @@ body {
   .CSS-hyperdrive {
     width: 100%;
   }
-  
+
+  /* stacked layout has no sibling to stretch against */
+  .solar-system {
+    min-height: 400px;
+  }
+
   .game-title {
     font-size: 32px;
-  }
-
-  .CSS-structucre {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #sendBtn {
-    margin-left: 0;
-    margin-top: 10px;
   }
 }
