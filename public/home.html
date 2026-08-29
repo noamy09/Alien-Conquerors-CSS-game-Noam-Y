@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Conquerors - CSS Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class = "background"></div>
+    <div class = "game-info">
+        <h1 class = "game-title">Alien Conquerors</h1>
+        <p class = "game-description"> Welcome to Alien Conquerors. You're goal is simple, to conquor as many planet as possible. To do so, use your CSS hyperdrive constructor to align your spaceship with it. Once you've landed all of the fleet assigned to you on all the planets, you'll be able to advance to the next solar system (level) and continue your conquest. Good luck.</p>
+        <div id = "levelCounter">
+            <span class = "arrow-left">
+                <span class = "arrow-left-icon"></span>
+            </span>
+            <span class = "Level-indicator" id = "levelIndicator">
+                <span class = "level-text">Level</span>
+                <span class = "level-number">1</span>
+                <span class = "level-text">of</span>
+                <span class = "level-number">6</span>
+            </span>
+            <span class = "arrow-right">
+                <span class = "arrow-right-icon"></span>
+            </span>
+        </div>
+    </div>
+    <div class = "game">
+        <div class = "CSS-hyperdrive">
+            <div class = "rows">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+                <p>7</p>
+                <p>8</p>
+                <p>9</p>
+                <p>10</p>
+            </div>
+            <div class = "CSS-structucre">
+                <p class = "CSS-bfore">
+                    #solar_system {
+                </p>
+                <p class = "CSS-indent">
+                    display: flex;
+                </p>
+                <form id="userInputForm">
+                    <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Align your fleet here..." 
+                    required 
+                    autocomplete="off"
+                    />
+                </form>
+                <p class = "CSS-after">}</p>
+            </div>
+            <button type="submit" form="userInputForm" id="sendBtn">launch</button>
+            <div id="feedbackBubble" class="bubble hidden"></div>
+        </div>
+        <div id="view">
+            <div id="board">
+                <div class = "solar-system" id="solarSystem"></div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

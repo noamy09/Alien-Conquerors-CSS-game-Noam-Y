@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: #00FF00;
+  font-family: 'Courier New', monospace;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.game {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.game-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #00FF00;
+  letter-spacing: 3px;
+}
+
+.game-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #00FF00;
+}
+
+#levelCounter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.arrow-left,
+.arrow-right {
+  font-size: 24px;
+  cursor: pointer;
+  color: #00FF00;
+  text-shadow: 0 0 5px #00FF00;
+}
+
+.arrow-left-icon::before {
+  content: '◄';
+}
+
+.arrow-right-icon::before {
+  content: '►';
+}
+
+.Level-indicator {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+  text-shadow: 0 0 5px #00FF00;
+}
+
+.level-text {
+  font-weight: bold;
+}
+
+.level-number {
+  font-weight: bold;
+}
+
+.CSS-hyperdrive {
+  container-type: inline-size;
+  border: 2px solid #00FF00;
+  padding: clamp(8px, 4cqi, 20px);
+  background-color: #001100;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(4px, 2cqi, 10px);
+  align-items: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3px, 1.5cqi, 8px);
+  font-size: clamp(7px, 3cqi, 16px);
+  font-weight: bold;
+  text-align: left;
+  text-shadow: 0 0 3px #00FF00;
+}
+
+.rows p {
+  margin: 0;
+}
+
+.CSS-structucre {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3px, 1.5cqi, 8px);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.CSS-bfore{
+    font-size: clamp(6px, 2.6cqi, 14px);
+    margin: 0;
+    padding: 0;
+}
+
+.CSS-indent {
+  font-size: clamp(6px, 2.6cqi, 14px);
+  margin: 0;
+  padding: 0;
+  padding-left: clamp(6px, 4cqi, 25px);
+}
+
+.CSS-after {
+  font-size: clamp(6px, 2.6cqi, 14px);
+  margin: 0;
+  padding: 0; 
+}
+
+#userInputForm {
+  display: flex;
+  width: 100%;
+  flex-basis: 100%;
+  padding-left: clamp(6px, 4cqi, 25px);
+}
+
+#userInput {
+  flex: 1;
+  min-width: 0;
+  background-color: #00ff0009;
+  border: 2px solid #00ff0009;
+  color: #00FF00;
+  padding: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(6px, 2.6cqi, 14px);
+  outline: none;
+  
+}
+
+#userInput::placeholder {
+  color: #00AA00;
+  opacity: 0.9;
+}
+
+
+
+#sendBtn {
+  background-color: #000000;
+  border: 2px solid #00FF00;
+  color: #00FF00;
+  padding: clamp(4px, 2cqi, 10px) clamp(6px, 4cqi, 20px);
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(6px, 2.6cqi, 14px);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  text-shadow: 0 0 5px #00FF00;
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+#feedbackBubble {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: 1px solid #00FF00;
+  border-radius: 5px;
+  font-size: 13px;
+  text-shadow: 0 0 5px #00FF00;
+  background-color: #001100;
+}
+
+#feedbackBubble.hidden {
+  display: none;
+}
+
+
+#view {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+#board {
+  width: 100%;
+  max-width: 800px;
+}
+
+.solar-system {
+  border: 2px solid #00FF00;
+  background-color: #001100;
+  padding: 20px;
+  min-height: 400px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .game {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #view {
+    width: 100%;
+    
+  }
+
+  .CSS-hyperdrive {
+    width: 100%;
+  }
+  
+  .game-title {
+    font-size: 32px;
+  }
+
+  .CSS-structucre {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #sendBtn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
