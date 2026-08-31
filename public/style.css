@@ -213,19 +213,57 @@ body {
   width: 100%;
   max-width: 800px;
   display: flex;
+  position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
 .solar-system {
   border: 2px dashed #00FF00;
-  background-color: #001100;
+  background-color: transparent;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  justify-content: center;
+  justify-content: space-between;
   align-content: flex-start;
   flex: 1;
+}
+
+.alien{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0px #00FF00);
+  }
+  25% {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 10px #00FF00);
+  }
+  50% {
+    transform: scale(1.1) rotate(-10deg);
+    filter: drop-shadow(0 0 15px #00FF00);
+  }
+  75% {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 10px #00FF00);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0px #00FF00);
+  }
+}
+
+.alien.celebrating {
+  animation: celebrate 1.0s ease-in-out;
 }
 
 /* Responsive */
