@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien Conquerors - CSS Game</title>
+    <link rel="icon" type="image/png" href="/objects/green alien.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,16 +15,16 @@
         <p class = "game-description"> Welcome to Alien Conquerors. You're goal is simple, to conquor as many planet as possible. To do so, use your CSS hyperdrive constructor to align your spaceship with it. Once you've landed all of the fleet assigned to you on all the planets, you'll be able to advance to the next solar system (level) and continue your conquest. Good luck.</p>
         <div id = "levelCounter">
             <span class = "arrow-left">
-                <span class = "arrow-left-icon"></span>
+                <span class = "arrow-left-icon" id = "arrowLeft"></span>
             </span>
             <span class = "Level-indicator" id = "levelIndicator">
-                <span class = "level-text">Level</span>
+                <span class = "level-text">Solar system</span>
                 <span class = "level-number">0</span>
                 <span class = "level-text">of</span>
                 <span class = "level-number">6</span>
             </span>
             <span class = "arrow-right">
-                <span class = "arrow-right-icon"></span>
+                <span class = "arrow-right-icon" id = "arrowRight"></span>
             </span>
         </div>
     </div>
@@ -48,14 +49,13 @@
                 <p class = "CSS-indent">
                     display: flex;
                 </p>
-                <form id="userInputForm">
-                    <input 
-                    type="text" 
+                <form id="userInputForm" novalidate>
+                    <textarea 
                     id="userInput" 
+                    rows="2" 
                     placeholder="Align your fleet here..." 
-                    required 
                     autocomplete="off"
-                    />
+                    ></textarea>
                 </form>
                 <p class = "CSS-after">}</p>
             </div>
@@ -65,9 +65,16 @@
         <div id="view">
             <div id="board">
                 <div class = "solar-system" id="solarSystem"></div>
+            </div>
         </div>
-        </div>
+    </div>    
+    <div class = "game-description-below">
+            Remember your training: to align the spaceships horizonally use "justify-content:" and align them vertically use "align-items:".
+            both of them accept as parameters: "start, flex-start, end, flex-end, and center".
+            "justify-content" also accepts: sapce-between, space-around, and space-evenly, "while align-items" also accepts: "baseline and stretch".
+            Finally, you may use flex-direction to choose at what order and layout are the spaceships placed. Examples for parameters are: "row, row-reverse, column, and column-reverse".
     </div>
+    
     <script src="home.js"></script>
 </body>
 </html>

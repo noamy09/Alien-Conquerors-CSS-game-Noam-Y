@@ -19,6 +19,7 @@ body {
   display: flex;
   gap: 20px;
   align-items: stretch;
+  padding: 30px;
 }
 
 .game-title {
@@ -29,8 +30,15 @@ body {
 }
 
 .game-description {
-  font-size: 16px;
+  font-size: 24px;
   margin-bottom: 20px;
+  text-shadow: 0 0 5px #00FF00;
+}
+
+.game-description-below {
+  text-align: center;  font-size: 18px;
+  margin-bottom: 20px;
+  color:#019401;
   text-shadow: 0 0 5px #00FF00;
 }
 
@@ -61,7 +69,7 @@ body {
 .Level-indicator {
   display: flex;
   gap: 10px;
-  font-size: 18px;
+  font-size: 24px;
   text-shadow: 0 0 5px #00FF00;
 }
 
@@ -151,16 +159,33 @@ body {
 #userInput {
   flex: 1;
   min-width: 0;
+  width: 100%;
+  min-height: var(--line);
   height: var(--line);
   background-color: #00ff0009;
   border: 2px solid #00ff0009;
   color: #00FF00;
-  padding: 0 0.3em;
+  padding: 0.2em 0.3em;
   font-family: 'Courier New', monospace;
   font-size: var(--fs);
   line-height: var(--line);
   outline: none;
-  
+  resize: none;
+  overflow: hidden;
+}
+
+#userInput.two-line-input {
+  min-height: calc(var(--line) * 2);
+  height: calc(var(--line) * 2);
+}
+
+#userInput::-webkit-scrollbar {
+  display: none;
+}
+
+#userInput {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 #userInput::placeholder {
@@ -189,13 +214,20 @@ body {
 }
 
 #feedbackBubble {
-  margin-top: 15px;
-  padding: 10px 15px;
+  position: absolute;
+  left: 1.4em;
+  right: 1.4em;
+  bottom: 1.4em;
+  padding: 0.8em 1em;
   border: 1px solid #00FF00;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.4;
   text-shadow: 0 0 5px #00FF00;
-  background-color: #001100;
+  background-color: rgba(0, 17, 0, 0.96);
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.5);
+  z-index: 20;
+    cursor: pointer;
 }
 
 #feedbackBubble.hidden {
@@ -205,16 +237,15 @@ body {
 
 #view {
   display: flex;
-  justify-content: center;
   flex: 1 1 0;
-  min-width: 0;}
+}
 
 #board {
   width: 100%;
   max-width: 800px;
   display: flex;
   position: relative;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
 }
 
@@ -224,19 +255,22 @@ body {
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
-  justify-content: space-between;
   align-content: flex-start;
   flex: 1;
+  overflow: hidden;
 }
 
 .alien{
-  width: 80px;
-  height: 80px;
+  width: clamp(40px, 8vw, 80px);
+  height: clamp(40px, 8vw, 80px);
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
   object-fit: contain;
   position: relative;
   z-index: 10;
+  transform-origin: center;
 }
 
 @keyframes celebrate {
