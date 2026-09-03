@@ -11,68 +11,68 @@ const NextLevelArrow = document.getElementById('arrowRight')
 //set up Aliens: green, red and yellow and the fleet
 
 const green_alien = document.createElement('img');
-green_alien.src = '/objects/green alien.png';
+green_alien.src = './objects/green alien.png';
 green_alien.alt = 'green alien';
 green_alien.className = 'alien';
 
 const red_alien = document.createElement('img');
-red_alien.src = '/objects/red alien.png';
+red_alien.src = './objects/red alien.png';
 red_alien.alt = 'red alien';
 red_alien.className = 'alien';
 
 const yellow_alien = document.createElement('img');
-yellow_alien.src = '/objects/yellow alien.png';
+yellow_alien.src = './objects/yellow alien.png';
 yellow_alien.alt = 'yellow alien';
 yellow_alien.className = 'alien';
 
 //definig the fleet for level 3
 const fleet1 = document.createElement('img');
-fleet1.src = '/objects/green alien.png';
+fleet1.src = './objects/green alien.png';
 fleet1.alt = 'green alien';
 fleet1.className = 'alien';
 
 const fleet2 = document.createElement('img');
-fleet2.src = '/objects/green alien.png';
+fleet2.src = './objects/green alien.png';
 fleet2.alt = 'green alien';
 fleet2.className = 'alien';
 
 const fleet3 = document.createElement('img');
-fleet3.src = '/objects/green alien.png';
+fleet3.src = './objects/green alien.png';
 fleet3.alt = 'green alien';
 fleet3.className = 'alien';
 
 const fleet4 = document.createElement('img');
-fleet4.src = '/objects/green alien.png';
+fleet4.src = './objects/green alien.png';
 fleet4.alt = 'green alien';
 fleet4.className = 'alien';
 
 const fleet5 = document.createElement('img');
-fleet5.src = '/objects/green alien.png';
+fleet5.src = './objects/green alien.png';
 fleet5.alt = 'green alien';
 fleet5.className = 'alien';
 
 const fleet6 = document.createElement('img');
-fleet6.src = '/objects/green alien.png';
+fleet6.src = './objects/green alien.png';
 fleet6.alt = 'green alien';
 fleet6.className = 'alien';
 
 const fleet7 = document.createElement('img');
-fleet7.src = '/objects/green alien.png';
+fleet7.src = './objects/green alien.png';
 fleet7.alt = 'green alien';
 fleet7.className = 'alien';
 
 const fleet8 = document.createElement('img');
-fleet8.src = '/objects/green alien.png';
+fleet8.src = './objects/green alien.png';
 fleet8.alt = 'green alien';
 fleet8.className = 'alien';
 
 const fleet9 = document.createElement('img');
-fleet9.src = '/objects/green alien.png';
+fleet9.src = './objects/green alien.png';
 fleet9.alt = 'green alien';
 fleet9.className = 'alien';
 
 const fleet10 = document.createElement('img');
-fleet10.src = '/objects/green alien.png';
+fleet10.src = './objects/green alien.png';
 fleet10.alt = 'green alien';
 fleet10.className = 'alien';
 
@@ -109,7 +109,7 @@ NextLevelArrow.addEventListener('click', () => ChangeLevel(currLevel+1));
 
 //helper function as part of setting up the levels
 function loadBoard(levelNumber) {
-  const backgroundPath = `/levels/level${levelNumber}.png`;
+  const backgroundPath = `./levels/level${levelNumber}.png`;
   board.style.backgroundImage = `url('${backgroundPath}')`;
 };
 
