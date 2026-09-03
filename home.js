@@ -180,7 +180,7 @@ function LevelUp(currAliensArr, nextAliensArr){
     else{
         setTimeout(() => {
             LoadLevel(currLevel, nextAliensArr);
-            showFeedback("congratulations! You have successfuly conquored all of the known solar systems in the galaxy! Perhaps we will disover more for you to conquor in the future...");
+            showFeedback("congratulations! You have successfuly conquored all of the known solar systems in the galaxy! Perhaps we will discover more for you to conquor in the future...");
         }, 2000);
     }
 };

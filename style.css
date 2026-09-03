@@ -88,7 +88,7 @@ body {
   --line: 2.2em;
   font-size: var(--fs);
   border: 2px dashed  #00FF00;
-  padding: 1.4em;
+  padding: 15px;
   background-color: #001100;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
   display: flex;
@@ -96,7 +96,9 @@ body {
   gap: 0.7em;
   align-items: flex-start;
   flex: 1 1 0;
-  min-width: 0;
+  min-width: 300px;
+  width: 500px;
+  height: 500px;
 }
 
 .rows {
@@ -241,8 +243,8 @@ body {
 }
 
 #board {
-  width: 100%;
-  max-width: 800px;
+  width: 600px;
+  height: 500px;
   display: flex;
   position: relative;
   background-size: 100% 100%;
@@ -257,20 +259,20 @@ body {
   display: flex;
   gap: 15px;
   align-content: flex-start;
-  flex: 1;
+  width: 600px;
+  height: 500px;
+  flex: 0 0 auto;
   overflow: hidden;
 }
 
 .alien{
-  width: clamp(40px, 8vw, 80px);
-  height: clamp(40px, 8vw, 80px);
+ width: 80px;
+  height: 80px;
   flex: 0 1 auto;
-  min-width: 0;
-  max-width: 100%;
   object-fit: contain;
   position: relative;
-  z-index: 10;
   transform-origin: center;
+  min-width: 0;
 }
 
 @keyframes celebrate {
@@ -302,9 +304,13 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body{
+    padding: 10px;
+  }
   .game {
     display: flex;
     flex-direction: column;
+    padding: 5%;
   }
 
   #view {
@@ -312,16 +318,42 @@ body {
     
   }
 
-  .CSS-hyperdrive {
-    width: 100%;
+  .game-description, .game-description-below{
+    font-size: 14px;
+
   }
 
-  /* stacked layout has no sibling to stretch against */
+  .Level-indicator{
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .CSS-hyperdrive {
+    width: 100%;
+    height: 350px;
+    min-width: 0;
+  }
+
   .solar-system {
-    min-height: 400px;
+    width: 100%;
+    height: 200px;
+    min-width: 0;
+    padding: 3%;
+  }
+
+    #board{
+    width: 100%;
+    height: 200px;
+    min-width: 0;
+    padding: 0%;
   }
 
   .game-title {
     font-size: 32px;
   }
+
+.alien {
+  width: 11%;
+  height: 15%;
+}
 }
